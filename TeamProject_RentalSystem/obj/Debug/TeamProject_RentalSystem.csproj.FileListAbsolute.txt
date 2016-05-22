@@ -1,0 +1,11 @@
+c:\users\administrator\documents\visual studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\bin\Debug\TeamProject_RentalSystem.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\bin\Debug\TeamProject_RentalSystem.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\bin\Debug\TeamProject_RentalSystem.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.adminForm.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.mainForm.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\TeamProject_RentalSystem\TeamProject_RentalSystem\obj\Debug\TeamProject_RentalSystem.userForm.resources
