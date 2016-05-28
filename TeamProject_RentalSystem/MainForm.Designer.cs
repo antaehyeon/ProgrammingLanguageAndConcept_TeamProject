@@ -36,10 +36,10 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("돋움체", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.titleLabel.Location = new System.Drawing.Point(117, 40);
+            this.titleLabel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.titleLabel.Location = new System.Drawing.Point(129, 42);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(388, 48);
+            this.titleLabel.Size = new System.Drawing.Size(352, 55);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "물품대여 시스템";
             // 
@@ -72,8 +72,8 @@
             this.Controls.Add(this.btn_userMode);
             this.Controls.Add(this.titleLabel);
             this.Name = "mainForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "물품대여 시스템";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

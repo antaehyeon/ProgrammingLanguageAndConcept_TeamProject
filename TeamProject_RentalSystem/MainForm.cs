@@ -17,31 +17,28 @@ namespace TeamProject_RentalSystem
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_userMode_Click(object sender, EventArgs e)
         {
             // 창 전환하는 부분 (유저모드)
-            var userForm = new userForm();
-            userForm.Location = this.Location;
-            userForm.StartPosition = FormStartPosition.Manual;
-            userForm.FormClosing += delegate { this.Show(); };
-            userForm.Show();
+            userForm userform = new userForm();
+            userform.FormClosed += new FormClosedEventHandler(mainForm_FormClosed);
+            userform.Show();
             this.Hide();
+
         }
 
         private void btn_adminMode_Click(object sender, EventArgs e)
         {
             // 창 전환하는 부분 (관리자모드)
-            var adminForm = new adminForm();
-            adminForm.Location = this.Location;
-            adminForm.StartPosition = FormStartPosition.Manual;
-            adminForm.FormClosing += delegate { this.Show(); };
-            adminForm.Show();
+            adminForm adminform = new adminForm();
+            adminform.FormClosed += new FormClosedEventHandler(mainForm_FormClosed);
+            adminform.Show();
             this.Hide();
+        }
+
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

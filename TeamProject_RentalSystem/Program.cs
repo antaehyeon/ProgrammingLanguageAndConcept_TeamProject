@@ -17,9 +17,6 @@ namespace TeamProject_RentalSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainForm());
-
-            Panel panel1 = new Panel();
-
         }
     }
 }

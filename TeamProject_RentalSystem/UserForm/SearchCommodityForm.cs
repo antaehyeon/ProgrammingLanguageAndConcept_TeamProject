@@ -21,5 +21,18 @@ namespace TeamProject_RentalSystem
         {
 
         }
+
+        private void btn_search_back_Click(object sender, EventArgs e)
+        {
+            userForm userform = new userForm();
+            userform.FormClosed += new FormClosedEventHandler(SearchCommodityForm_FormClosed);
+            userform.Show();
+            this.Hide();
+        }
+
+        private void SearchCommodityForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
