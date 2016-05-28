@@ -33,7 +33,7 @@ namespace TeamProject_RentalSystem
             this.Hide();
         }
 
-        private void btn_rent_Click(object sender, EventArgs e)
+        private void btn_rentRentForm_Click(object sender, EventArgs e)
         {
             RentAndReturnForm rentform = new RentAndReturnForm();
             rentform.FormClosed += new FormClosedEventHandler(userForm_FormClosed);
@@ -44,6 +44,7 @@ namespace TeamProject_RentalSystem
         private void userForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
     }
 }

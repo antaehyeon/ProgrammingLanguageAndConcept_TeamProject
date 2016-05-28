@@ -36,6 +36,7 @@ namespace TeamProject_RentalSystem
             this.Hide();
         }
 
+        // 폼에서 닫기버튼을 클릭했을 경우
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();

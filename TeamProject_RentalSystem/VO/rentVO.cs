@@ -11,6 +11,16 @@ namespace TeamProject_RentalSystem
         private string rentNo;
         private string rentTime;
         private string rentId;
+        private string rentNum;
+        
+        public rentVO() { }
+        public rentVO(string rentNo, string rentTime, string rentId, string rentNum)
+        {
+            this.rentNo = rentNo;
+            this.rentTime = rentTime;
+            this.rentId = rentId;
+            this.RentNum = rentNum;
+        }
 
         public string RentNo
         {
@@ -28,6 +38,12 @@ namespace TeamProject_RentalSystem
         {
             get { return rentId; }
             set { rentId = value; }
+        }
+
+        public string RentNum
+        {
+            get { return rentNum; }
+            set { rentNum = value; }
         }
     }
 }

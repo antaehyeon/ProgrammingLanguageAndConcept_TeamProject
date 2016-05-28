@@ -10,11 +10,14 @@ namespace TeamProject_RentalSystem
     {
         private string itemNo;
         private string itemName;
+        private string itemNum;
 
-        public itemVO(string itemNo, string itemName)
+        public itemVO() { }
+        public itemVO(string itemNo, string itemName, string itemNum)
         {
             this.itemNo = itemNo;
             this.itemName = itemName;
+            this.ItemNum = itemNum;
         }
 
         public string ItemNo
@@ -27,6 +30,12 @@ namespace TeamProject_RentalSystem
         {
             get { return itemName; }
             set { itemName = value; }
+        }
+
+        public string ItemNum
+        {
+            get { return itemNum; }
+            set { itemNum = value; }
         }
     }
 }

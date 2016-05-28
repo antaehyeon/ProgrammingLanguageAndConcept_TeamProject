@@ -29,46 +29,39 @@
         private void InitializeComponent()
         {
             this.btn_search = new System.Windows.Forms.Button();
-            this.btn_rent = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_openRentForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_userForm_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(36, 171);
+            this.btn_search.Location = new System.Drawing.Point(200, 237);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(120, 50);
+            this.btn_search.Size = new System.Drawing.Size(171, 75);
             this.btn_search.TabIndex = 0;
             this.btn_search.Text = "물품검색";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // btn_rent
+            // btn_openRentForm
             // 
-            this.btn_rent.Location = new System.Drawing.Point(227, 171);
-            this.btn_rent.Name = "btn_rent";
-            this.btn_rent.Size = new System.Drawing.Size(120, 50);
-            this.btn_rent.TabIndex = 1;
-            this.btn_rent.Text = "물품예약";
-            this.btn_rent.UseVisualStyleBackColor = true;
-            this.btn_rent.Click += new System.EventHandler(this.btn_rent_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(421, 171);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "물품반납";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_openRentForm.Location = new System.Drawing.Point(490, 237);
+            this.btn_openRentForm.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_openRentForm.Name = "btn_openRentForm";
+            this.btn_openRentForm.Size = new System.Drawing.Size(171, 75);
+            this.btn_openRentForm.TabIndex = 1;
+            this.btn_openRentForm.Text = "물품예약";
+            this.btn_openRentForm.UseVisualStyleBackColor = true;
+            this.btn_openRentForm.Click += new System.EventHandler(this.btn_rentRentForm_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(135, 65);
+            this.label1.Location = new System.Drawing.Point(215, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(328, 34);
             this.label1.TabIndex = 3;
@@ -76,9 +69,10 @@
             // 
             // btn_userForm_back
             // 
-            this.btn_userForm_back.Location = new System.Drawing.Point(12, 12);
+            this.btn_userForm_back.Location = new System.Drawing.Point(17, 18);
+            this.btn_userForm_back.Margin = new System.Windows.Forms.Padding(4);
             this.btn_userForm_back.Name = "btn_userForm_back";
-            this.btn_userForm_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_userForm_back.Size = new System.Drawing.Size(107, 34);
             this.btn_userForm_back.TabIndex = 4;
             this.btn_userForm_back.Text = "뒤로가기";
             this.btn_userForm_back.UseVisualStyleBackColor = true;
@@ -86,17 +80,19 @@
             // 
             // userForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 296);
+            this.ClientSize = new System.Drawing.Size(874, 444);
             this.Controls.Add(this.btn_userForm_back);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btn_rent);
+            this.Controls.Add(this.btn_openRentForm);
             this.Controls.Add(this.btn_search);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "userForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "물품대여 시스템 - 유저모드";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.userForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,8 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_rent;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_openRentForm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_userForm_back;
     }

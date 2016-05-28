@@ -12,14 +12,20 @@ namespace TeamProject_RentalSystem
 {
     public partial class SearchCommodityForm : Form
     {
+        SharingData sd;
+
         public SearchCommodityForm()
         {
             InitializeComponent();
+            sd = SharingData.GetInstance();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void SearchCommodityForm_Load(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < sd.ItemList.Count; i++)
+            {
+                dataGridView_itemList.Rows.Add(sd.ItemList[i].ItemName);
+            }
         }
 
         private void btn_search_back_Click(object sender, EventArgs e)
@@ -30,9 +36,37 @@ namespace TeamProject_RentalSystem
             this.Hide();
         }
 
+        private void dataGridView_itemList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string contentText = "";
+            string itemNo = "";
+            string itemNum = "";
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView_itemList.Rows[e.RowIndex];
+                contentText = row.Cells["itemName"].Value.ToString();
+            }           
+
+            for (int i = 0; i < sd.ItemList.Count; i++)
+            {
+                if (contentText.Equals(sd.ItemList[i].ItemName))
+                {
+                    itemNo = sd.ItemList[i].ItemNo;
+                    itemNum = sd.ItemList[i].ItemNum;
+                }
+            }
+     
+            label1.Text = "현재 선택하신 " + contentText + " 에 대한 정보입니다";
+            label2.Text = "물품 번호 : " + itemNo;
+            label3.Text = "재고 상태 : " + itemNum;
+            label4.Text = "대여 가능여부 : ";
+        }
+
         private void SearchCommodityForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
     }
 }
