@@ -14,11 +14,13 @@ namespace TeamProject_RentalSystem
         private static SharingData sData;
         private List<itemVO> itemList;
         private List<rentVO> rentList;
+        private List<AccountVO> accountList;
 
         public SharingData()
         {
             ItemList = new List<itemVO>();
             RentList = new List<rentVO>();
+            accountList = new List<AccountVO>();
         }
 
         public static SharingData GetInstance()
@@ -37,6 +39,12 @@ namespace TeamProject_RentalSystem
         {
             get { return rentList; }
             set { rentList = value; }
+        }
+
+        internal List<AccountVO> AccountList
+        {
+            get { return accountList; }
+            set {  accountList = value; }
         }
     }
 }

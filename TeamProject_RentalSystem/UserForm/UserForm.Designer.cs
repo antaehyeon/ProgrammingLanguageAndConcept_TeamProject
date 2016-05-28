@@ -95,7 +95,7 @@
             this.Controls.Add(this.btn_rent);
             this.Controls.Add(this.btn_search);
             this.Name = "userForm";
-            this.Text = "물품대여 시스템";
+            this.Text = "물품대여 시스템 - 유저모드";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.userForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
