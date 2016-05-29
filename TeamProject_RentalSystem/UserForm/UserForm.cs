@@ -12,9 +12,17 @@ namespace TeamProject_RentalSystem
 {
     public partial class userForm : Form
     {
+        SharingData sd;
+
         public userForm()
         {
             InitializeComponent();
+            sd = SharingData.GetInstance();
+        }
+
+        private void userForm_Load(object sender, EventArgs e)
+        {
+            lbl_welcome.Text = sd.CurrentId + "님 안녕하세요 :D";
         }
 
         private void btn_search_Click(object sender, EventArgs e)

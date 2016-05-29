@@ -64,10 +64,10 @@
     <Compile Include="UserForm\InputNumForm.Designer.cs">
       <DependentUpon>InputNumForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Main\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Main\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VO\AccountVO.cs" />
@@ -78,10 +78,10 @@
     <Compile Include="UserForm\RentAndReturnForm.Designer.cs">
       <DependentUpon>RentAndReturnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VO\RentVO.cs" />
@@ -91,14 +91,14 @@
     <Compile Include="UserForm\SearchCommodityForm.Designer.cs">
       <DependentUpon>SearchCommodityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SharingData.cs" />
+    <Compile Include="Main\SharingData.cs" />
     <Compile Include="UserForm\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForm\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminForm\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -106,10 +106,10 @@
     <EmbeddedResource Include="UserForm\InputNumForm.resx">
       <DependentUpon>InputNumForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Main\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\LoginForReturn.resx">
@@ -144,7 +144,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Main\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
