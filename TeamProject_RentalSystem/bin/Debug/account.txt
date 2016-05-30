@@ -1,3 +1,2 @@
-admin 1234 1
-antaehyeon xogus1696 0
-1 1 0
+122033 xogus1696 0 010-4912-2194
+admin admin 1 null

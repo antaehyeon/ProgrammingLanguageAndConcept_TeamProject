@@ -39,6 +39,11 @@ namespace TeamProject_RentalSystem
 
                 // 해당 물품 갯수 차감
                 var calc = int.Parse(sd.ItemList[rarf.Index].ItemNum) - int.Parse(sd.InputNumData);
+                if (calc < 0)
+                {
+                    MessageBox.Show("대여하려는 물품의 갯수가 수량보다 많습니다");
+                    return;
+                }
                 sd.ItemList[rarf.Index].ItemNum = calc.ToString();
 
                 // 대여자 쪽 정보 추가

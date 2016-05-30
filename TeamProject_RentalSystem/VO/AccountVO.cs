@@ -11,13 +11,15 @@ namespace TeamProject_RentalSystem
         private string userId;
         private string userPw;
         private string accessLevel;
+        private string phoneNum;
 
         public AccountVO() { }
-        public AccountVO(string userId, string userPw, string accessLevel)
+        public AccountVO(string userId, string userPw, string accessLevel, string phoneNum)
         {
             this.userId = userId;
             this.userPw = userPw;
             this.accessLevel = accessLevel;
+            this.phoneNum = phoneNum;
         }
 
         public string UserId
@@ -36,6 +38,12 @@ namespace TeamProject_RentalSystem
         {
             get { return accessLevel; }
             set { accessLevel = value; }
+        }
+
+        public string PhoneNum
+        {
+            get { return phoneNum; }
+            set { phoneNum = value; }
         }
     }
 }

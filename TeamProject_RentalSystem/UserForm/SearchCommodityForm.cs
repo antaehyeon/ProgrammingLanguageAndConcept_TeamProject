@@ -46,7 +46,7 @@ namespace TeamProject_RentalSystem
             {
                 DataGridViewRow row = this.dataGridView_itemList.Rows[e.RowIndex];
                 contentText = row.Cells["itemName"].Value.ToString();
-            }           
+            }
 
             for (int i = 0; i < sd.ItemList.Count; i++)
             {
@@ -54,13 +54,24 @@ namespace TeamProject_RentalSystem
                 {
                     itemNo = sd.ItemList[i].ItemNo;
                     itemNum = sd.ItemList[i].ItemNum;
+                    // 해당 물품의 갯수에 따라서 메세지를 다르게 출력
+                    if (sd.ItemList[i].ItemNum.Equals("0"))
+                    {
+                        lbl_rentState.Text = "대여 가능여부 : 불가능";
+                        lbl_rentState.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        lbl_rentState.Text = "대여 가능여부 : 가능";
+                        lbl_rentState.ForeColor = Color.Blue;
+                    }
+                    break;
                 }
             }
      
             label1.Text = "현재 선택하신 " + contentText + " 에 대한 정보입니다";
             label2.Text = "물품 번호 : " + itemNo;
             label3.Text = "재고 상태 : " + itemNum;
-            label4.Text = "대여 가능여부 : ";
         }
 
         private void SearchCommodityForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -107,6 +107,7 @@
             this.btn_register.TabIndex = 6;
             this.btn_register.Text = "가입하기";
             this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // label4
             // 
@@ -124,7 +125,7 @@
             this.txtBox_first.Size = new System.Drawing.Size(51, 21);
             this.txtBox_first.TabIndex = 9;
             this.txtBox_first.TextChanged += new System.EventHandler(this.txtBox_first_TextChanged);
-            this.txtBox_first.Enter += new System.EventHandler(this.txtBox_first_Enter);
+            this.txtBox_first.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_first_KeyPress);
             // 
             // txtBox_mid
             // 
@@ -133,6 +134,7 @@
             this.txtBox_mid.Size = new System.Drawing.Size(51, 21);
             this.txtBox_mid.TabIndex = 10;
             this.txtBox_mid.TextChanged += new System.EventHandler(this.txtBox_mid_TextChanged);
+            this.txtBox_mid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_mid_KeyPress);
             // 
             // txtBox_last
             // 
@@ -141,6 +143,7 @@
             this.txtBox_last.Size = new System.Drawing.Size(51, 21);
             this.txtBox_last.TabIndex = 11;
             this.txtBox_last.TextChanged += new System.EventHandler(this.txtBox_last_TextChanged);
+            this.txtBox_last.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_last_KeyPress);
             // 
             // label5
             // 

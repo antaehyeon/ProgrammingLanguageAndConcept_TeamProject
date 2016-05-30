@@ -14,6 +14,7 @@ namespace TeamProject_RentalSystem
     public partial class LoginForm : Form
     {
         SharingData sd;
+        int index;
 
         public LoginForm()
         {
@@ -42,7 +43,7 @@ namespace TeamProject_RentalSystem
                 {
                     var cellArray = cellValues.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                    AccountVO accountData = new AccountVO(cellArray[0], cellArray[1], cellArray[2]);
+                    AccountVO accountData = new AccountVO(cellArray[0], cellArray[1], cellArray[2], cellArray[3]);
                     sd.AccountList.Add(accountData);
                 } // foreach
 
@@ -76,7 +77,16 @@ namespace TeamProject_RentalSystem
             {
                 if (loginPwCheck())
                 {
-                    openUserForm();
+                    // 유저모드
+                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    {
+                        openUserForm();
+                    }
+                    // 관리자모드
+                    else
+                    {
+                        openAdminForm();
+                    }
                 }
             }
         }
@@ -88,7 +98,16 @@ namespace TeamProject_RentalSystem
             {
                 if(loginPwCheck())
                 {
-                    openUserForm();
+                    // 유저모드
+                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    {
+                        openUserForm();
+                    }
+                    // 관리자모드
+                    else
+                    {
+                        openAdminForm();
+                    }
                 }
             }
         }
@@ -99,13 +118,21 @@ namespace TeamProject_RentalSystem
             // 로그인 성공시
             if (loginPwCheck())
             {
-                openUserForm();
+                // 유저모드
+                if (sd.AccountList[index].AccessLevel.Equals(0))
+                {
+                    openUserForm();
+                }
+                // 관리자모드
+                else
+                {
+                    openAdminForm();
+                }
             }
         }
 
         public bool loginPwCheck()
         {
-            int index = 0;
             bool loginCheck = false;
 
             for (index = 0; index < sd.AccountList.Count; index++)
@@ -114,12 +141,24 @@ namespace TeamProject_RentalSystem
                 // 그 ID에 대한 PW도 맞는지 확인
                 if (this.txtBox_id.Text.Equals(sd.AccountList[index].UserId) && this.txtBox_pw.Text.Equals(sd.AccountList[index].UserPw))
                 {
-                    // 로그인 성공
-                    loginCheck = true;
-                    MessageBox.Show("로그인에 성공하셨습니다 - 유저모드");
-                    return true;
-                } // if
-            } // for
+                    // 로그인성공
+                    // 유저모드
+                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    {
+                        loginCheck = true;
+                        MessageBox.Show("유저모드로 로그인합니다");
+                        return true;
+                    }
+                    // 관리자모드
+                    else
+                    {
+                        loginCheck = true;
+                        MessageBox.Show("관리자모드로 로그인합니다");
+                        return true;
+                    }
+
+                }
+            }
 
             // 로그인 실패 (index가 count값과 같을경우)
             if (!loginCheck)
@@ -144,6 +183,15 @@ namespace TeamProject_RentalSystem
             this.Hide();
         } // M.openUserForm
 
+        // 어드민폼 오픈
+        public void openAdminForm()
+        {
+            adminForm adminform = new adminForm();
+            adminform.FormClosed += new FormClosedEventHandler(LoginForm_FormClosed);
+            adminform.Show();
+            this.Hide();
+        }
+
         // 로그인폼이 닫혔을 경우
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -151,12 +199,18 @@ namespace TeamProject_RentalSystem
             Application.Exit();
         } // M.LoginForm_FormClosed
 
-        // 회원가입
+        // 회원가입 버튼 클릭시
         private void btn_membership_Click(object sender, EventArgs e)
         {
-            MemberShipForm memberShipForm = new MemberShipForm();
-            memberShipForm.FormClosed += new FormClosedEventHandler(LoginForm_FormClosed);
+            MemberShipForm memberShipForm = new MemberShipForm(this);
             memberShipForm.Show();
+            this.Hide(); 
+        }
+
+        private void btn_leaveMember_Click(object sender, EventArgs e)
+        {
+            MemberLeave memberleave = new MemberLeave(this);
+            memberleave.Show();
             this.Hide();
         }
     } // Class
