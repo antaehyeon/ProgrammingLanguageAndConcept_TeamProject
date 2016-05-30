@@ -52,6 +52,12 @@
     <Compile Include="AdminForm\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\MemberShipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\MemberShipForm.Designer.cs">
+      <DependentUpon>MemberShipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\LoginForReturn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +84,6 @@
     <Compile Include="UserForm\RentAndReturnForm.Designer.cs">
       <DependentUpon>RentAndReturnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="VO\RentVO.cs" />
     <Compile Include="UserForm\SearchCommodityForm.cs">
       <SubType>Form</SubType>
@@ -103,14 +103,14 @@
     <EmbeddedResource Include="AdminForm\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\MemberShipForm.resx">
+      <DependentUpon>MemberShipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\InputNumForm.resx">
       <DependentUpon>InputNumForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\LoginForReturn.resx">
       <DependentUpon>LoginForReturn.cs</DependentUpon>

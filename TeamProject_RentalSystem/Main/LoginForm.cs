@@ -33,7 +33,7 @@ namespace TeamProject_RentalSystem
             // 2. 뒤로가기로 돌아왔을때
 
             // 2번의 경우에서 계속해서 텍스트파일에 데이터를 쓰게되므로
-            // SharingData 의 Class 쪽 체크값을 이용해 프로그램이 구동될 동안은 한번만 쓰도록 설정
+            // SharingData 쪽 체크값을 이용해 프로그램이 구동될 동안은 한번만 쓰도록 설정
             if (!sd.LoginWriteCheck)
             {
                 // Account Text File Read
@@ -150,5 +150,14 @@ namespace TeamProject_RentalSystem
             this.Close();
             Application.Exit();
         } // M.LoginForm_FormClosed
+
+        // 회원가입
+        private void btn_membership_Click(object sender, EventArgs e)
+        {
+            MemberShipForm memberShipForm = new MemberShipForm();
+            memberShipForm.FormClosed += new FormClosedEventHandler(LoginForm_FormClosed);
+            memberShipForm.Show();
+            this.Hide();
+        }
     } // Class
 }
