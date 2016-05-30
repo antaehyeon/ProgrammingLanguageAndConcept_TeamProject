@@ -79,6 +79,18 @@ namespace TeamProject_RentalSystem
             MessageBox.Show("새로고침 완료", "완료");
         }
 
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            LoginForm loginform = new LoginForm();
+            loginform.FormClosed += new FormClosedEventHandler(adminForm_FormClosed);
+            loginform.Show();
+            this.Hide();
+        }
+
+        private void adminForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

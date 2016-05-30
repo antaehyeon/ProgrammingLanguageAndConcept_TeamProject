@@ -77,6 +77,12 @@ namespace TeamProject_RentalSystem
             {
                 if (sd.AccountList[index].UserPw.Equals(txtBox_pw.Text))
                 {
+                    if(sd.AccountList[index].AccessLevel.Equals("1"))
+                    {
+                        MessageBox.Show("관리자 계정은 삭제할 수 없습니다");
+                        return;
+                    }
+
                     sd.AccountList.RemoveAt(index);
 
                     StreamWriter writer = new StreamWriter("Account.txt", false, System.Text.Encoding.Default);

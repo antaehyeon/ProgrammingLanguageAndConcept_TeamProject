@@ -78,7 +78,7 @@ namespace TeamProject_RentalSystem
                 if (loginPwCheck())
                 {
                     // 유저모드
-                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    if (sd.AccountList[index].AccessLevel.Equals("0"))
                     {
                         openUserForm();
                     }
@@ -99,7 +99,7 @@ namespace TeamProject_RentalSystem
                 if(loginPwCheck())
                 {
                     // 유저모드
-                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    if (sd.AccountList[index].AccessLevel.Equals("0"))
                     {
                         openUserForm();
                     }
@@ -119,7 +119,7 @@ namespace TeamProject_RentalSystem
             if (loginPwCheck())
             {
                 // 유저모드
-                if (sd.AccountList[index].AccessLevel.Equals(0))
+                if (sd.AccountList[index].AccessLevel.Equals("0"))
                 {
                     openUserForm();
                 }
@@ -143,7 +143,7 @@ namespace TeamProject_RentalSystem
                 {
                     // 로그인성공
                     // 유저모드
-                    if (sd.AccountList[index].AccessLevel.Equals(0))
+                    if (sd.AccountList[index].AccessLevel.Equals("0"))
                     {
                         loginCheck = true;
                         MessageBox.Show("유저모드로 로그인합니다");
