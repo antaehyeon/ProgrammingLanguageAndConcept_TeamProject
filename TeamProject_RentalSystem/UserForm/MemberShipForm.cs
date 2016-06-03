@@ -111,6 +111,8 @@ namespace TeamProject_RentalSystem
             lbl_guide.Text = "          패스워드는 자유롭게 입력 가능합니다";
             lbl_guide.ForeColor = Color.Black;
         }
+        // 비밀번호 체크부분
+        // 재확인으로 입력한 패스워드와 맞는지 체크
         private void txtBox_repw_TextChanged(object sender, EventArgs e)
         {
             txtBox_repw.PasswordChar = '*';
@@ -148,6 +150,7 @@ namespace TeamProject_RentalSystem
                 }
             }
 
+            // 텍스트 박스에 빈공간이 없는지 확인
             if (string.IsNullOrWhiteSpace(txtBox_id.Text) || string.IsNullOrWhiteSpace(txtBox_first.Text) || string.IsNullOrWhiteSpace(txtBox_last.Text) ||
                 string.IsNullOrWhiteSpace(txtBox_mid.Text) || string.IsNullOrWhiteSpace(txtBox_repw.Text) || string.IsNullOrWhiteSpace(txtBox_pw.Text))
             {
@@ -155,11 +158,20 @@ namespace TeamProject_RentalSystem
                 lbl_guide.ForeColor = Color.Red;
                 return;
             }
+            // 핸드폰번호 박스에 전부 들어가 있는지 확인
             else if (txtBox_first.Text.Length.Equals(3) && (txtBox_mid.Text.Length.Equals(4) || txtBox_mid.Text.Equals(3)) && txtBox_last.Text.Length.Equals(4))
             {
                 AccountVO account = new AccountVO(txtBox_id.Text, txtBox_pw.Text, "0", phoneNum);
 
                 sd.AccountList.Add(account);
+            }
+            // 마지막으로 2개의 패스워드가 같은지 확인
+            else if (txtBox_pw.Text.Equals(txtBox_repw.Text))
+            {
+                lbl_guide.Text = "입력한 비밀번호가 일치하지 않습니다";
+                lbl_guide.ForeColor = Color.Red;
+                txtBox_repw.Text = "";
+                txtBox_repw.Focus();
             }
             else
             {
@@ -218,7 +230,7 @@ namespace TeamProject_RentalSystem
         private void MemberShipForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             loginform.Show();
-            this.Close();
+            this.Dispose();
         }
     }
 }

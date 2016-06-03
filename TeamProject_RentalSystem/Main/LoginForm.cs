@@ -195,7 +195,7 @@ namespace TeamProject_RentalSystem
         // 로그인폼이 닫혔을 경우
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Dispose();
             Application.Exit();
         } // M.LoginForm_FormClosed
 

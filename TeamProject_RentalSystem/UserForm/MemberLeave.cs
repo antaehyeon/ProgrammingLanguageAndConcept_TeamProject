@@ -27,6 +27,12 @@ namespace TeamProject_RentalSystem
             sd = SharingData.GetInstance();
         }
 
+        // 간단히 시각적인 효과를 주기위해서 비밀번호 텍스트박스를 숨겨놈
+        private void MemberLeave_Load(object sender, EventArgs e)
+        {
+            txtBox_pw.Visible = false;
+        }
+
         private void txtBox_id_KeyPress(object sender, KeyPressEventArgs e)
         {
             // 엔터가 입력될 경우
@@ -61,11 +67,6 @@ namespace TeamProject_RentalSystem
             }
         }
 
-        private void MemberLeave_Load(object sender, EventArgs e)
-        {
-            txtBox_pw.Visible = false;
-        }
-
         private void txtBox_pw_TextChanged(object sender, EventArgs e)
         {
             txtBox_pw.PasswordChar = '*';
@@ -77,14 +78,29 @@ namespace TeamProject_RentalSystem
             {
                 if (sd.AccountList[index].UserPw.Equals(txtBox_pw.Text))
                 {
+                    // 관리자 계정이 영어라서 아래의 예외처리에는 절대 걸릴 수 없지만 (아이디 텍스트박스에는 숫자만 들어가게 설정해놓음)
+                    // 혹시나 하는 마음에 처리해놨습니다
                     if(sd.AccountList[index].AccessLevel.Equals("1"))
                     {
                         MessageBox.Show("관리자 계정은 삭제할 수 없습니다");
                         return;
                     }
 
+                    // 대여한 물품이 존재한 계정이 탈퇴를 시도할시 예외처리
+                    for (int i = 0; i < sd.RentList.Count; i++)
+                    {
+                        if (sd.AccountList[index].UserId.Equals(sd.RentList[i].RentId))
+                        {
+                            MessageBox.Show("대여한 물품이 있는 계정은 탈퇴가 불가능합니다");
+                            this.OnFormClosed(null);
+                            return;
+                        }
+                    }
+                    
+                    // 해당 List에서 계정정보를 지우고
                     sd.AccountList.RemoveAt(index);
-
+                    
+                    // Account 정보로 텍스트파일을 다시 Write
                     StreamWriter writer = new StreamWriter("Account.txt", false, System.Text.Encoding.Default);
                     for (int i = 0; i < sd.AccountList.Count; i++)
                     {
@@ -92,6 +108,7 @@ namespace TeamProject_RentalSystem
                     }
                     writer.Close();
 
+                    // 정상처리문
                     MessageBox.Show("회원탈퇴가 정상적으로 처리되었습니다");
                     this.OnFormClosed(null);
                 }
@@ -106,7 +123,7 @@ namespace TeamProject_RentalSystem
         private void MemberLeave_FormClosed(object sender, FormClosedEventArgs e)
         {
             loginform.Show();
-            this.Close();
+            this.Dispose();
         }
     }
 }

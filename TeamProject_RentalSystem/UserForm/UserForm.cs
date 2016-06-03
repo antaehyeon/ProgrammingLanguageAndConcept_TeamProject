@@ -51,7 +51,7 @@ namespace TeamProject_RentalSystem
 
         private void userForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Dispose();
             Application.Exit();
         }
     }

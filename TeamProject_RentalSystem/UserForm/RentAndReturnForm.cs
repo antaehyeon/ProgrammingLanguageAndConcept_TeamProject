@@ -158,10 +158,16 @@ namespace TeamProject_RentalSystem
             // 클릭한 열의 물품번호의 데이터를 긁어옴
             DataGridViewRow row = this.rentGridView.Rows[e.RowIndex];
             rentData.RentNo = row.Cells["rentItemNo"].Value.ToString();
+            rentData.RentId = row.Cells["rentId"].Value.ToString();
+            rentData.RentNum = row.Cells["rentNum"].Value.ToString();
+            rentData.RentTime = row.Cells["rentTime"].Value.ToString();
 
             for (index = 0; index < sd.RentList.Count; index++)
             {
-                if (sd.RentList[index].RentNo == rentData.RentNo)
+                if (sd.RentList[index].RentNo.Equals(rentData.RentNo) &&
+                    sd.RentList[index].RentId.Equals(rentData.RentId) &&
+                    sd.RentList[index].RentNum.Equals(rentData.RentNum) &&
+                    sd.RentList[index].RentTime.Equals(rentData.RentTime))
                 {
                     return;
                 }
@@ -171,7 +177,7 @@ namespace TeamProject_RentalSystem
         // Form 을 닫을시
         private void RentAndReturnForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Dispose();
             Application.Exit();
         }
     }

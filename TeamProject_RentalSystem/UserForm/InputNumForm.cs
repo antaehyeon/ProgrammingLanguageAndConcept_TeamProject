@@ -67,7 +67,7 @@ namespace TeamProject_RentalSystem
 
         private void InputNumForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }
